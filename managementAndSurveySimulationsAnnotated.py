@@ -444,7 +444,7 @@ def simulation(argv):
             if row != col: #probability of staying at plant is zero if already chosen to leave
                 distanceMatrixOriginal[row][col] = np.e**(-kernelScale*math.sqrt(((rowValX-distX[col])*spacingX)**2 + ((rowValY - distY[col])*spacingY)**2))
 
-    #convert the distances between plants into the probability of a whitefly traveling between ant pair of plants
+    #convert the distances between plants into the probability of a whitefly traveling between any pair of plants
     distanceMatrix = np.copy(distanceMatrixOriginal) #reset these to the original                
     scale = np.linalg.norm(distanceMatrix, 1, axis = 1)
     for row in range(len(distanceMatrix)):
