@@ -90,7 +90,7 @@ def simulation(argv):
     
     
     def growingSeason(currentTime, probList, initialInfection = None, initialField = None):
-        print 'year', year
+        print('year', year)
         
         #Initialise the field:
         if year == endYear - 1: #if this is the last year
@@ -542,7 +542,7 @@ def simulation(argv):
 numToRun = sys.argv[1]
 batchNum = sys.argv[2]
 
-print len(sys.argv), sys.argv[:]
+print(len(sys.argv), sys.argv[:])
 
 start = int(batchNum)*int(numToRun)
 end = start + int(numToRun)
@@ -551,5 +551,5 @@ end = start + int(numToRun)
 #Run simulations:
 for i in range(start, end):
     if not os.path.isfile('overalInfection'+str(i)+'.csv') and not os.path.isfile('deadField'+str(i)+'.txt'):
-        print 'starting simulation', i
+        print('starting simulation', i)
         simulation(i)
